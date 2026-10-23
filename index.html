@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wax &amp; Die</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Pinyon+Script&family=Caveat:wght@500;600&family=UnifrakturMaguntia&family=Cinzel:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="airmail" aria-hidden="true"></div>
+<header class="top">
+  <div class="brand">Wax &amp; Die</div>
+  <div class="meta">
+    <p id="hint">Click anywhere to seal it. Hold longer for a wider seal. Open the stamp below to change the handle, die and initials.</p>
+    <p id="gpu">Starting the renderer</p>
+  </div>
+</header>
+
+<main class="desk">
+  <div class="paper p-plain">
+    <article class="letter l-plain">
+      <div class="head"><b>Wax &amp; Die</b><span>Tuesday evening, at the desk</span></div>
+      <p>Dear reader,</p>
+      <p>This page is a desk. The stamp in your hand has a brass die cut in reverse, so the design reads the right way round in the wax.</p>
+      <p>Press it on anything. This paragraph, the margin, the desk around the sheet. The wax pools, the die pushes it out into a raised rim, and the seal sets where you left it. Hold the press a little longer and the wax spreads wider.</p>
+      <p>Open the stamp in the toolbar to swap the walnut handle for cut crystal or fluted rosewood with a silk tassel, pick another die, or set your initials.</p>
+      <p class="sign">Yours,<br><span>The desk</span></p>
+      <div class="target" id="sealTarget" aria-hidden="true">Seal here</div>
+    </article>
+  </div>
+
+</main>
+
+<div class="dock" data-nostamp role="toolbar" aria-label="Stamp settings">
+  <section class="studio" id="studio" role="dialog" aria-label="Customize your stamp">
+    <div class="studio-head">
+      <img class="big" id="bigPreview" alt="">
+      <div>
+        <h2>Your stamp</h2>
+        <p class="summary" id="summary">Monogram die with WD in oxblood wax</p>
+        <button class="btn small" id="showDie">Show the die</button>
+      </div>
+      <button class="close" id="closeStudio" aria-label="Close"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <span class="label">Stamp</span>
+    <div class="kinds" id="kinds" role="group" aria-label="Stamp type"></div>
+    <span class="label">Die</span>
+    <div class="dies" id="dies" role="group" aria-label="Die design"></div>
+    <label class="label" for="mono">Initials</label>
+    <div class="initials">
+      <div class="field">
+        <input class="mono" id="mono" maxlength="3" value="WD" autocomplete="off" autocapitalize="characters" spellcheck="false" inputmode="text">
+        <button class="clearIn" id="clearMono" aria-label="Clear initials"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 7l10 10M17 7 7 17"/></svg></button>
+      </div>
+      <p class="note" id="monoNote">One to three letters or numbers. They appear on the Monogram, Crown and Hearts dies.</p>
+    </div>
+    <span class="label waxlabel">Wax</span>
+    <div class="waxgrid" id="waxPanel" role="group" aria-label="Wax color"></div>
+  </section>
+  <button class="chip" id="dieBtn" aria-expanded="false" aria-controls="studio" aria-label="Customize your stamp">
+    <img id="dieImg" alt="">
+    <span><b id="dieName">Monogram</b><small id="dieSub">WD in oxblood</small></span>
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"/></svg>
+  </button>
+  <div class="sep"></div>
+  <div class="waxes" id="waxes" role="group" aria-label="Wax color"></div>
+  <div class="sep"></div>
+  <button class="btn" id="sound" aria-pressed="true" aria-label="Sound on" title="Sound">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4z"/><path id="waves" d="M15.5 9.2a4 4 0 0 1 0 5.6M18 6.8a7.4 7.4 0 0 1 0 10.4"/></svg>
+  </button>
+  <button class="btn" id="clear"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 7h14M10 7V5h4v2M7 7l1 12h8l1-12"/></svg><span class="txt">Clear seals</span></button>
+  <span class="count" id="count" aria-live="polite">0 seals</span>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
